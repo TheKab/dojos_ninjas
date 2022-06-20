@@ -22,8 +22,7 @@ def show_dojo(dojos_id):
         'dojos_id' : dojos_id
     }
 
-    dojo = Dojo.show_dojo_ninjas(data)
-    return render_template("show_dojo.html", dojo = dojo)
+    return render_template("show_dojo.html", dojo =  Dojo.show_dojo_ninjas(data))
 
 
 # -----------------  CREATE NEW DOJO -------------------------

@@ -2,7 +2,7 @@
 
 # import the function that will return an instance of a connection
 from dojos_app.config.mysqlconnection import connectToMySQL
-from dojos_app.models import Ninja
+from dojos_app.models.Ninja import Ninja
 
 
 class Dojo:
@@ -11,6 +11,7 @@ class Dojo:
         self.name       = data['name']
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
+        self.ninja      = []
 
 # ------------------ SHOW ALL DOJOS ---------------------------
     # Now we use class methods to query our database
@@ -44,14 +45,14 @@ class Dojo:
 
         for row_from_db in results:
             ninja_data = {
-                "id" : row_from_db["ninjas.id"],
-                "first_name" : row_from_db["first_name"],
-                "last_name" : row_from_db["last_name"],
-                "age" : row_from_db["age"],
-                "created_at" : row_from_db["ninjas.created_at"],
-                "updated_at" : row_from_db["ninjas.updated_at"]
+                "id"            : row_from_db["ninjas.id"],
+                "first_name"    : row_from_db["first_name"],
+                "last_name"     : row_from_db["last_name"],
+                "age"           : row_from_db["age"],
+                "created_at"    : row_from_db["ninjas.created_at"],
+                "updated_at"    : row_from_db["ninjas.updated_at"]
             }
-            dojos.ninja.append(Ninja.Ninja(ninja_data))
+            dojos.ninja.append(Ninja(ninja_data))
         return dojos
 
 # ------------------ SAVE ONE DOJO ---------------------------
