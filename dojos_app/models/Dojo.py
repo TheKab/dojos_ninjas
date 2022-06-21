@@ -11,7 +11,7 @@ class Dojo:
         self.name       = data['name']
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
-        self.ninja      = []
+        self.ninjas      = []
 
 # ------------------ SHOW ALL DOJOS ---------------------------
     # Now we use class methods to query our database
@@ -52,7 +52,7 @@ class Dojo:
                 "created_at"    : row_from_db["ninjas.created_at"],
                 "updated_at"    : row_from_db["ninjas.updated_at"]
             }
-            dojos.ninja.append(Ninja(ninja_data))
+            dojos.ninjas.append(Ninja(ninja_data))
         return dojos
 
 # ------------------ SAVE ONE DOJO ---------------------------

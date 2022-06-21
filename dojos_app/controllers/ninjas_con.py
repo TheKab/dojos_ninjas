@@ -15,9 +15,7 @@ def create_ninja():
         "first_name"    : request.form["first_name"],
         "last_name"     : request.form["last_name"],
         "age"           : request.form["age"],
-        "dojos_id"      : request.form["dojos_id"],
-        "created_at"    : request.form["created_at"],
-        "updated_at"    : request.form["updated_at"]
+        "dojo_id"       : request.form["dojo_id"]
     }
 
     Ninja.save_ninja(data)
